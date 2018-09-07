@@ -8,8 +8,12 @@ from sheets import get_credentials, get_raw_sheet_data
 
 Question = namedtuple("Question", "question answer choices correct")
 
-
 def quiz(questions):
+  """The actual quiz.
+
+  Takes in a list of Questions, randomises the order of options
+  and appends the choice letter to the possible choice.
+  """
   score = 0
   for question in questions:
     print(question.question)
@@ -43,7 +47,6 @@ def get_questions_from_csv(file):
       questions.append(q)
   return questions
 
-
 def get_questions_from_sheets():
   values = get_raw_sheet_data('Sheet1!A1:D')
   questions = []
@@ -57,7 +60,6 @@ def get_questions_from_sheets():
       q = Question(question, answer, choices, correct)
       questions.append(q)
   return questions
-
 
 if __name__ == "__main__":
   questions = get_questions_from_sheets()
