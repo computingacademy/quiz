@@ -4,7 +4,7 @@ import csv
 from collections import namedtuple
 from string import ascii_lowercase
 
-from sheets import get_credentials, get_raw_sheet_data
+from sheets import get_raw_sheet_data
 
 Question = namedtuple("Question", "question answer choices correct")
 
@@ -62,5 +62,6 @@ def get_questions_from_sheets():
   return questions
 
 if __name__ == "__main__":
+  # questions = get_questions_from_csv('quiz.csv')
   questions = get_questions_from_sheets()
   quiz(questions)
