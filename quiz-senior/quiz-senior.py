@@ -41,8 +41,8 @@ def get_questions_from_csv(file):
     reader = csv.reader(f)
     for line in reader:
       (question, answer, choices, correct) = line
-      choices = choices.strip().split(',')
-      correct = correct.strip().split(',')
+      choices = choices.split(',')
+      correct = correct.split(',')
       q = Question(question, answer, choices, correct)
       questions.append(q)
   return questions
@@ -55,8 +55,8 @@ def get_questions_from_sheets():
   else:
     for row in values:
       (question, answer, choices, correct) = row
-      choices = choices.strip().split(',')
-      correct = correct.strip().split(',')
+      choices = choices.split(',')
+      correct = correct.split(',')
       q = Question(question, answer, choices, correct)
       questions.append(q)
   return questions
