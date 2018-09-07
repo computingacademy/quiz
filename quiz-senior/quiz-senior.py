@@ -28,7 +28,7 @@ def quiz(questions):
       score += 1
     else:
       print(f"Incorrect, the answer was {question.answer}")
-  print(f"{score} out of {len(questions)} which is {score/len(questions)*100}%")
+  print(f"{score} out of {len(questions)} which is {score/len(questions)*100:.2f}%")
 
 def get_questions_from_csv(file):
   """Get questions from a csv fileself.
